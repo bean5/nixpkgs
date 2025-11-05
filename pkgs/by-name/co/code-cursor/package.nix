@@ -17,11 +17,11 @@ let
   sources = {
     # Get using `cat Cursor-*.AppImage | openssl dgst -sha256 -binary | openssl base64 | sed 's/^/sha256-/'`
     x86_64-linux = fetchurl {
-      url = "https://downloads.cursor.com/production/45fd70f3fe72037444ba35c9e51ce86a1977ac11/linux/x64/Cursor-2.0.34-x86_64.AppImage";
-      hash = "sha256-x51N2BttMkfKwH4/Uxn/ZNFVPZbaNdsZm8BFFIMmxBM=";
+      url = "https://api2.cursor.sh/updates/download/golden/linux-x64-deb/cursor/2.1";
+      hash = "sha256-VPGl04VT8wRDxb351h/y0O+Ui2T0Qk/sHaaFjkiYa2s=";
     };
     aarch64-linux = fetchurl {
-       url = "https://downloads.cursor.com/production/9675251a06b1314d50ff34b0cbe5109b78f848cd/linux/arm64/Cursor-2.0.34-aarch64.AppImage";
+       url = "https://downloads.cursor.com/production/9675251a06b1314d50ff34b0cbe5109b78f848cd/linux/arm64/Cursor-2.1.46-aarch64.AppImage";
        hash = "sha256-96zL0pmcrEyDEy8oW2qWk6RM8XGE4Gd2Aa3Hhq0qvk0=";
     };
     x86_64-darwin = fetchurl {
@@ -41,7 +41,7 @@ in
   commandLineArgs = finalCommandLineArgs;
 
   # Get this from the portion from the filename AppImage
-  version = "2.0.34";
+  version = "2.1.46";
   pname = "cursor";
 
   # You can find the current VSCode version in the About dialog:
