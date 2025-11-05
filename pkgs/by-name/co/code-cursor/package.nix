@@ -15,6 +15,7 @@ let
   finalCommandLineArgs = "--update=false " + commandLineArgs;
 
   sources = {
+    # Get using `cat Cursor-*.AppImage | openssl dgst -sha256 -binary | openssl base64 | sed 's/^/sha256-/'`
     x86_64-linux = fetchurl {
       url = "https://downloads.cursor.com/production/45fd70f3fe72037444ba35c9e51ce86a1977ac11/linux/x64/Cursor-2.0.34-x86_64.AppImage";
       hash = "sha256-x51N2BttMkfKwH4/Uxn/ZNFVPZbaNdsZm8BFFIMmxBM=";
@@ -39,6 +40,7 @@ in
   inherit useVSCodeRipgrep;
   commandLineArgs = finalCommandLineArgs;
 
+  # Get this from the portion from the filename AppImage
   version = "2.0.34";
   pname = "cursor";
 
